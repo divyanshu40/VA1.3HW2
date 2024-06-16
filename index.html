@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  
+</head>
+
+<body>
+  
+  <label for="inputBookReview">Enter your book review</label>
+  <textarea id="inputBookReview" rows="6" cols="50"></textarea>
+  <button id="displayBookReviewButton">Display Book Review</button>
+  <p id="displayReview"></p>
+
+
+  <label for="inputBio">Enter your personal bio:</label>
+  <textarea id="inputBio" rows="6" cols="50"></textarea>
+  <button id="displayBioButton">Display Styled Bio</button>
+  <p id="displayBio"></p>
+
+  <label for="inputDiaryEntry">Enter your personal diary entry</label>
+  <textarea id="inputDiaryEntry" rows="6" cols="50"></textarea>
+  <button id="displayDiaryEntryButton">Display Diary Entry</button>
+  <p id="displayDiaryEntry"></p>
+  
+  <script>
+
+    const inputBookReview = document.getElementById("inputBookReview")
+    const displayBookReviewButton = document.getElementById("displayBookReviewButton")
+    const displayReview = document.getElementById("displayReview")
+    displayBookReviewButton.addEventListener("click" , function(){
+      let bookReview = inputBookReview.value
+      displayReview.textContent = `Your book review: ${bookReview}`
+    })
+
+
+    const inputBio = document.getElementById("inputBio")
+    const displayBioButton = document.getElementById("displayBioButton")
+    const displayBio = document.getElementById("displayBio")
+    displayBioButton.addEventListener("click" , function(){
+      bio = inputBio.value
+      displayBio.innerHTML = `
+      <p><i>${bio}</i></p>
+      
+      `
+    })
+
+const inputDiaryEntry = document.getElementById("inputDiaryEntry")
+    const displayDiaryEntryButton = document.getElementById("displayDiaryEntryButton")
+    const displayDiaryEntry = document.getElementById("displayDiaryEntry")
+    displayDiaryEntryButton.addEventListener("click" , function(){
+      let entry = inputDiaryEntry.value
+      let currentDateAndTime = new Date().toLocaleString()
+      displayDiaryEntry.innerHTML = `
+      <p><strong>${currentDateAndTime}</strong></p>
+      <p>${entry}</p>
+      
+      `
+    })
+
+    
+  </script>
+</body>
+
+</html>
